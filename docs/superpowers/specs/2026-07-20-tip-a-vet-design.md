@@ -10,6 +10,13 @@ veteran-facing dashboard/payout feed (where a vet sees incoming tips
 accumulate like a Venmo activity feed) is an explicit future phase, not built
 now.
 
+**Purpose note:** this build is a concept mockup/prototype used to pitch the
+idea to a stakeholder (via screenshots), not a live public product. There is
+no real nonprofit entity or payment processor behind it yet, so no real-money
+handling, charitable-solicitation, or tax-exempt-status concerns apply at
+this stage — the simulated data and lack of payment integration described
+below are intentional for that reason, not just a build shortcut.
+
 ## Scope (MVP)
 
 In scope:
