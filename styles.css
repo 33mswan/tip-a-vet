@@ -46,3 +46,56 @@ body {
 .view[hidden] {
   display: none;
 }
+
+.veteran-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+
+.veteran-card {
+  display: block;
+  background-color: #ffffff;
+  border: 1px solid #e0dccf;
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  text-align: center;
+  text-decoration: none;
+  color: var(--color-text);
+  transition: border-color 0.15s ease, transform 0.15s ease;
+}
+
+.veteran-card:hover {
+  border-color: var(--color-gold);
+  transform: translateY(-2px);
+}
+
+.avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background-color: var(--color-navy);
+  color: var(--color-cream);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 1.25rem;
+  margin: 0 auto 1rem;
+}
+
+.veteran-name {
+  font-size: 1.1rem;
+  margin-bottom: 0.25rem;
+}
+
+.veteran-meta {
+  color: #666;
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+
+.veteran-total {
+  color: var(--color-red);
+  font-weight: bold;
+}
