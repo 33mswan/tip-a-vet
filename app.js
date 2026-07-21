@@ -91,9 +91,9 @@ function setUpTipFlow() {
 
   customInput.addEventListener("input", function () {
     const value = Number(customInput.value);
+    amountButtons.forEach(function (b) { b.classList.remove("selected"); });
     if (customInput.value && value > 0) {
       selectedAmount = value;
-      amountButtons.forEach(function (b) { b.classList.remove("selected"); });
       confirmButton.disabled = false;
     } else {
       selectedAmount = null;
