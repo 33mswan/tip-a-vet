@@ -1,3 +1,16 @@
+function escapeHtml(str) {
+  var map = {
+    "&": "&amp;",
+    "<": "&lt;",
+    ">": "&gt;",
+    '"': "&quot;",
+    "'": "&#39;"
+  };
+  return str.replace(/[&<>"']/g, function(char) {
+    return map[char];
+  });
+}
+
 function initialsFromName(name) {
   return name
     .split(" ")
@@ -50,10 +63,10 @@ function setUpSubmitForm() {
 
     const newVet = {
       id: "v" + (VETERANS.length + 1),
-      name: name,
-      branch: branch,
-      era: era,
-      bio: bio,
+      name: escapeHtml(name),
+      branch: escapeHtml(branch),
+      era: escapeHtml(era),
+      bio: escapeHtml(bio),
       avatarInitials: initialsFromName(name),
       totalTipped: 0,
     };
@@ -63,7 +76,7 @@ function setUpSubmitForm() {
     const success = document.getElementById("submit-success");
     success.hidden = false;
     success.innerHTML =
-      '<p>Thanks &mdash; ' + name + ' is now listed!</p>' +
+      '<p>Thanks &mdash; ' + escapeHtml(name) + ' is now listed!</p>' +
       '<a class="confirm-button" href="#/vets/' + newVet.id + '">View their profile</a>';
   });
 }
