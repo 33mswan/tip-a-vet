@@ -56,3 +56,23 @@ const VETERANS = [
 ];
 
 const TIPS = [];
+
+function formatCurrency(amount) {
+  return "$" + amount.toFixed(0);
+}
+
+function findVeteran(id) {
+  return VETERANS.find(function (v) { return v.id === id; });
+}
+
+function sendTip(veteranId, amount) {
+  const vet = findVeteran(veteranId);
+  vet.totalTipped += amount;
+  TIPS.push({
+    id: "t" + (TIPS.length + 1),
+    veteranId: veteranId,
+    amount: amount,
+    timestamp: new Date().toISOString(),
+  });
+  return vet.totalTipped;
+}
