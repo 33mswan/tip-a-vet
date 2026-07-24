@@ -13,7 +13,15 @@
 </header>
 
 <main id="app">
-  <section id="directory-view" class="view">
+  <section id="home-view" class="view">
+    <div id="home-content"></div>
+  </section>
+
+  <section id="directory-view" class="view" hidden>
+    <div class="page-heading">
+      <h2>Browse Veterans</h2>
+      <p>Every one of these veterans has a story. Pick one to learn more and send a tip.</p>
+    </div>
     <div id="veteran-grid" class="veteran-grid"></div>
   </section>
 
@@ -52,6 +60,7 @@
 <script src="view-payment.js"></script>
 <script src="view-submit.js"></script>
 <script src="view-served.js"></script>
+<script src="view-home.js"></script>
 <script src="app.js"></script>
 </body>
 </html>

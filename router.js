@@ -33,6 +33,12 @@ function router() {
     }
   }
 
+  if (hash === "#/vets") {
+    renderDirectory();
+    showView("directory-view");
+    return;
+  }
+
   if (hash === "#/submit") {
     renderSubmitForm();
     showView("submit-view");
@@ -45,8 +51,8 @@ function router() {
     return;
   }
 
-  renderDirectory();
-  showView("directory-view");
+  renderHome();
+  showView("home-view");
 }
 
 window.addEventListener("hashchange", router);
