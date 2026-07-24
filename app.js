@@ -1,5 +1,5 @@
 document.getElementById("back-button").addEventListener("click", function () {
-  window.location.hash = "#/";
+  window.location.hash = "#/vets";
 });
 
 document.getElementById("payment-back-button").addEventListener("click", function () {
