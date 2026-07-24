@@ -22,19 +22,7 @@ body {
 .site-header {
   background-color: var(--color-navy);
   color: var(--color-cream);
-  text-align: center;
-  padding: 2rem 1rem;
-}
-
-.site-header h1 {
-  font-size: 2rem;
-  letter-spacing: 0.05em;
-}
-
-.site-header .tagline {
-  color: var(--color-gold);
-  margin-top: 0.5rem;
-  font-style: italic;
+  padding: 1.25rem 1rem;
 }
 
 #app {
@@ -387,4 +375,79 @@ body {
 
 .see-all-link:hover {
   text-decoration: underline;
+}
+
+.header-bar {
+  max-width: 960px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.brand {
+  text-decoration: none;
+  color: var(--color-cream);
+}
+
+.brand h1 {
+  font-size: 1.5rem;
+  letter-spacing: 0.05em;
+}
+
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--color-cream);
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.site-nav {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.site-nav a {
+  color: var(--color-cream);
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+.site-nav a:hover {
+  color: var(--color-gold);
+}
+
+.nav-tip-button {
+  background-color: var(--color-gold);
+  color: var(--color-navy-dark) !important;
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+  font-weight: bold;
+}
+
+.nav-tip-button:hover {
+  background-color: #d9b96e;
+}
+
+@media (max-width: 640px) {
+  .nav-toggle {
+    display: block;
+  }
+
+  .site-nav {
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+
+  .site-nav.open {
+    display: flex;
+  }
 }
