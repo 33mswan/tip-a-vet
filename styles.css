@@ -192,6 +192,7 @@ body {
 }
 
 .confirm-button {
+  display: block;
   width: 100%;
   background-color: var(--color-red);
   color: var(--color-cream);
@@ -201,6 +202,8 @@ body {
   font-size: 1rem;
   font-weight: bold;
   cursor: pointer;
+  text-decoration: none;
+  text-align: center;
 }
 
 .confirm-button:disabled {
@@ -213,4 +216,62 @@ body {
   margin-top: 1rem;
   color: var(--color-navy);
   font-weight: bold;
+}
+
+.payment-vet-summary {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.payment-vet-summary .avatar {
+  margin: 0;
+}
+
+.checkout-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.checkout-form label {
+  font-size: 0.85rem;
+  color: #666;
+}
+
+.checkout-form input {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 0.35rem;
+  font-size: 1rem;
+}
+
+.checkout-row {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.checkout-row > div {
+  flex: 1;
+}
+
+.payment-success-panel {
+  text-align: center;
+}
+
+.payment-success-panel h2 {
+  color: var(--color-navy);
+  margin: 1rem 0 0.5rem;
+}
+
+.payment-success-panel p {
+  margin-bottom: 1.5rem;
+  color: #333;
+}
+
+.payment-link {
+  display: inline-block;
 }
