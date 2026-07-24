@@ -33,6 +33,12 @@ function router() {
     }
   }
 
+  if (hash === "#/submit") {
+    renderSubmitForm();
+    showView("submit-view");
+    return;
+  }
+
   renderDirectory();
   showView("directory-view");
 }
