@@ -76,3 +76,38 @@ function sendTip(veteranId, amount) {
   });
   return vet.totalTipped;
 }
+
+const SERVED_VETERANS = [
+  {
+    id: "s1",
+    name: "Harold \"Hal\" Whitfield",
+    branch: "Navy",
+    era: "Vietnam",
+    outcomeBlurb: "Fully funded new hearing aids after his VA benefits lapsed.",
+    totalRaised: 340,
+  },
+  {
+    id: "s2",
+    name: "Marjorie Simms",
+    branch: "Army",
+    era: "Gulf War",
+    outcomeBlurb: "Covered three months of rent during a gap between jobs.",
+    totalRaised: 890,
+  },
+  {
+    id: "s3",
+    name: "Louis Petrakis",
+    branch: "Marines",
+    era: "Korea",
+    outcomeBlurb: "Funded a wheelchair ramp for his front porch.",
+    totalRaised: 615,
+  },
+  {
+    id: "s4",
+    name: "Ruth Alden",
+    branch: "Air Force",
+    era: "WWII",
+    outcomeBlurb: "Paid for a headstone marker honoring her service.",
+    totalRaised: 275,
+  },
+];

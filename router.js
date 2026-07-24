@@ -39,6 +39,12 @@ function router() {
     return;
   }
 
+  if (hash === "#/served") {
+    renderServedVets();
+    showView("served-view");
+    return;
+  }
+
   renderDirectory();
   showView("directory-view");
 }
