@@ -1,10 +1,14 @@
 :root {
-  --color-navy: #0b2545;
-  --color-navy-dark: #071a33;
-  --color-gold: #c9a35a;
-  --color-red: #8c1c2c;
-  --color-cream: #f7f3ea;
-  --color-text: #1c1c1c;
+  --color-bg: #f6f1e6;
+  --color-bg-card: #ffffff;
+  --color-navy: #28394f;
+  --color-navy-dark: #1b2738;
+  --color-red: #a8483f;
+  --color-red-dark: #8b3a32;
+  --color-tan: #cbb894;
+  --color-green: #00c853;
+  --color-text: #1a1a1a;
+  --color-text-secondary: #6b7280;
 }
 
 * {
@@ -14,15 +18,16 @@
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  background-color: var(--color-cream);
+  font-family: -apple-system, "Segoe UI", system-ui, Roboto, sans-serif;
+  background-color: var(--color-bg);
   color: var(--color-text);
 }
 
 .site-header {
   background-color: var(--color-navy);
-  color: var(--color-cream);
+  color: var(--color-bg);
   padding: 1.25rem 1rem;
+  border-bottom: 3px solid var(--color-red);
 }
 
 #app {
@@ -43,18 +48,19 @@ body {
 
 .veteran-card {
   display: block;
-  background-color: #ffffff;
-  border: 1px solid #e0dccf;
-  border-radius: 0.5rem;
+  background-color: var(--color-bg-card);
+  border: none;
+  border-radius: 1rem;
+  box-shadow: 0 2px 10px rgba(40, 57, 79, 0.1);
   padding: 1.5rem;
   text-align: center;
   text-decoration: none;
   color: var(--color-text);
-  transition: border-color 0.15s ease, transform 0.15s ease;
+  transition: box-shadow 0.15s ease, transform 0.15s ease;
 }
 
 .veteran-card:hover {
-  border-color: var(--color-gold);
+  box-shadow: 0 6px 16px rgba(40, 57, 79, 0.16);
   transform: translateY(-2px);
 }
 
@@ -76,17 +82,19 @@ body {
 .veteran-name {
   font-size: 1.1rem;
   margin-bottom: 0.25rem;
+  font-weight: 700;
 }
 
 .veteran-meta {
-  color: #666;
+  color: var(--color-text-secondary);
   font-size: 0.9rem;
   margin-bottom: 0.5rem;
 }
 
 .veteran-total {
   color: var(--color-red);
-  font-weight: bold;
+  font-weight: 800;
+  font-size: 1.05rem;
 }
 
 .back-button {
@@ -97,6 +105,7 @@ body {
   cursor: pointer;
   margin-bottom: 1.5rem;
   padding: 0;
+  font-weight: 600;
 }
 
 .back-button:hover {
@@ -104,13 +113,31 @@ body {
 }
 
 .profile-content {
-  background-color: #ffffff;
-  border: 1px solid #e0dccf;
-  border-radius: 0.5rem;
+  background-color: var(--color-bg-card);
+  border: none;
+  border-radius: 1rem;
+  box-shadow: 0 2px 10px rgba(40, 57, 79, 0.1);
   padding: 2rem;
   text-align: center;
   max-width: 480px;
   margin: 0 auto;
+}
+
+.profile-header-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  text-align: left;
+  margin-bottom: 1rem;
+}
+
+.profile-header-row .avatar-large {
+  margin: 0;
+}
+
+.profile-header-row .veteran-name,
+.profile-header-row .veteran-meta {
+  margin-bottom: 0;
 }
 
 .avatar-large {
@@ -122,88 +149,34 @@ body {
 .veteran-bio {
   margin: 1rem 0;
   line-height: 1.5;
-  color: #333;
-}
-
-.tip-flow {
-  margin-top: 1.5rem;
-  padding-top: 1.5rem;
-  border-top: 1px solid #e0dccf;
-}
-
-.tip-flow-label {
-  font-weight: bold;
-  margin-bottom: 0.75rem;
-}
-
-.amount-options {
-  display: flex;
-  gap: 0.5rem;
-  justify-content: center;
-  flex-wrap: wrap;
-  margin-bottom: 1rem;
-}
-
-.amount-button {
-  border: 2px solid var(--color-navy);
-  background-color: transparent;
-  color: var(--color-navy);
-  padding: 0.5rem 1rem;
-  border-radius: 999px;
-  cursor: pointer;
-  font-size: 1rem;
-}
-
-.amount-button.selected {
-  background-color: var(--color-gold);
-  border-color: var(--color-gold);
-  color: var(--color-navy-dark);
-}
-
-.custom-amount {
-  margin-bottom: 1rem;
-}
-
-.custom-amount label {
-  display: block;
-  font-size: 0.85rem;
-  color: #666;
-  margin-bottom: 0.35rem;
-}
-
-.custom-amount input {
-  width: 100%;
-  padding: 0.5rem;
-  border: 1px solid #ccc;
-  border-radius: 0.35rem;
-  font-size: 1rem;
+  color: var(--color-text);
+  text-align: left;
 }
 
 .confirm-button {
   display: block;
   width: 100%;
   background-color: var(--color-red);
-  color: var(--color-cream);
+  color: var(--color-bg);
   border: none;
-  padding: 0.75rem;
-  border-radius: 0.35rem;
+  padding: 0.85rem;
+  border-radius: 999px;
   font-size: 1rem;
-  font-weight: bold;
+  font-weight: 700;
   cursor: pointer;
   text-decoration: none;
   text-align: center;
+  transition: background-color 0.15s ease;
+}
+
+.confirm-button:hover {
+  background-color: var(--color-red-dark);
 }
 
 .confirm-button:disabled {
-  background-color: #ccc;
-  color: #888;
+  background-color: #d8d2c4;
+  color: #8a8478;
   cursor: not-allowed;
-}
-
-.tip-success-message {
-  margin-top: 1rem;
-  color: var(--color-navy);
-  font-weight: bold;
 }
 
 .payment-vet-summary {
@@ -211,39 +184,112 @@ body {
   align-items: center;
   gap: 1rem;
   margin-bottom: 1.5rem;
+  text-align: left;
 }
 
 .payment-vet-summary .avatar {
   margin: 0;
 }
 
-.checkout-form {
+.amount-entry {
+  margin-bottom: 1.5rem;
+}
+
+.amount-display {
   display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-  margin-top: 1rem;
+  align-items: baseline;
+  justify-content: center;
+  gap: 0.15rem;
+  margin-bottom: 1.25rem;
 }
 
-.checkout-form label {
-  font-size: 0.85rem;
-  color: #666;
+.amount-currency {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--color-navy);
 }
 
-.checkout-form input {
-  width: 100%;
-  padding: 0.5rem;
-  border: 1px solid #ccc;
-  border-radius: 0.35rem;
+.amount-input {
+  width: 6rem;
+  border: none;
+  background: none;
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: var(--color-navy);
+  text-align: left;
+}
+
+.amount-input:focus {
+  outline: none;
+}
+
+.amount-chips {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 1.25rem;
+}
+
+.amount-chip {
+  border: 2px solid var(--color-navy);
+  background-color: transparent;
+  color: var(--color-navy);
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.amount-chip.selected {
+  background-color: var(--color-navy);
+  border-color: var(--color-navy);
+  color: var(--color-bg);
+}
+
+.fee-breakdown {
+  background-color: rgba(203, 184, 148, 0.2);
+  border-radius: 0.75rem;
+  padding: 0.85rem 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.fee-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  color: var(--color-text-secondary);
+  padding: 0.2rem 0;
+}
+
+.fee-row.fee-total {
+  font-weight: 800;
+  color: var(--color-text);
+  border-top: 1px solid var(--color-tan);
+  margin-top: 0.35rem;
+  padding-top: 0.5rem;
   font-size: 1rem;
 }
 
-.checkout-row {
-  display: flex;
-  gap: 0.75rem;
+.note-field {
+  margin-bottom: 0.5rem;
 }
 
-.checkout-row > div {
-  flex: 1;
+.note-field label {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--color-text-secondary);
+  margin-bottom: 0.35rem;
+}
+
+.note-field input {
+  width: 100%;
+  padding: 0.6rem 0.75rem;
+  border: 1px solid var(--color-tan);
+  border-radius: 0.75rem;
+  font-size: 1rem;
+  background-color: var(--color-bg);
 }
 
 .payment-success-panel {
@@ -257,30 +303,40 @@ body {
 
 .payment-success-panel p {
   margin-bottom: 1.5rem;
-  color: #333;
+  color: var(--color-text);
 }
 
 .payment-link {
   display: inline-block;
 }
 
-.checkout-form textarea {
-  width: 100%;
-  padding: 0.5rem;
-  border: 1px solid #ccc;
-  border-radius: 0.35rem;
-  font-size: 1rem;
-  font-family: inherit;
-  resize: vertical;
+.checkout-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 1rem;
 }
 
+.checkout-form label {
+  font-size: 0.85rem;
+  color: var(--color-text-secondary);
+  text-align: left;
+}
+
+.checkout-form input,
+.checkout-form textarea,
 .checkout-form select {
   width: 100%;
-  padding: 0.5rem;
-  border: 1px solid #ccc;
-  border-radius: 0.35rem;
+  padding: 0.6rem 0.75rem;
+  border: 1px solid var(--color-tan);
+  border-radius: 0.75rem;
   font-size: 1rem;
-  background-color: #fff;
+  background-color: var(--color-bg);
+  font-family: inherit;
+}
+
+.checkout-form textarea {
+  resize: vertical;
 }
 
 .submit-success {
@@ -304,15 +360,25 @@ body {
 }
 
 .served-outcome {
-  color: #333;
+  color: var(--color-text);
   font-size: 0.9rem;
   margin-bottom: 0.5rem;
   line-height: 1.4;
 }
 
 .hero {
+  position: relative;
   text-align: center;
   padding: 2rem 1rem 3rem;
+  border-radius: 1rem;
+  background-image: repeating-linear-gradient(
+      180deg,
+      rgba(168, 72, 63, 0.05) 0px,
+      rgba(168, 72, 63, 0.05) 14px,
+      rgba(246, 241, 230, 0) 14px,
+      rgba(246, 241, 230, 0) 28px
+    ),
+    linear-gradient(180deg, rgba(40, 57, 79, 0.06), rgba(40, 57, 79, 0));
 }
 
 .hero h2 {
@@ -325,7 +391,7 @@ body {
   max-width: 640px;
   margin: 0 auto 1.5rem;
   line-height: 1.6;
-  color: #333;
+  color: var(--color-text);
 }
 
 .hero-cta {
@@ -348,8 +414,14 @@ body {
   margin-bottom: 0.5rem;
 }
 
+.star-bullet {
+  color: var(--color-red);
+  margin-right: 0.35rem;
+  font-size: 0.9em;
+}
+
 .how-step p {
-  color: #666;
+  color: var(--color-text-secondary);
   font-size: 0.9rem;
 }
 
@@ -388,7 +460,9 @@ body {
 
 .brand {
   text-decoration: none;
-  color: var(--color-cream);
+  color: var(--color-bg);
+  display: flex;
+  align-items: center;
 }
 
 .brand h1 {
@@ -396,11 +470,16 @@ body {
   letter-spacing: 0.05em;
 }
 
+.brand-star {
+  color: var(--color-red);
+  margin-right: 0.4rem;
+}
+
 .nav-toggle {
   display: none;
   background: none;
   border: none;
-  color: var(--color-cream);
+  color: var(--color-bg);
   font-size: 1.5rem;
   cursor: pointer;
 }
@@ -412,25 +491,25 @@ body {
 }
 
 .site-nav a {
-  color: var(--color-cream);
+  color: var(--color-bg);
   text-decoration: none;
   font-size: 0.95rem;
 }
 
 .site-nav a:hover {
-  color: var(--color-gold);
+  color: var(--color-tan);
 }
 
 .nav-tip-button {
-  background-color: var(--color-gold);
-  color: var(--color-navy-dark) !important;
+  background-color: var(--color-red);
+  color: var(--color-bg) !important;
   padding: 0.5rem 1rem;
   border-radius: 999px;
   font-weight: bold;
 }
 
 .nav-tip-button:hover {
-  background-color: #d9b96e;
+  background-color: var(--color-red-dark);
 }
 
 @media (max-width: 640px) {
