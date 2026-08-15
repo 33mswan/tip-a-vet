@@ -1,16 +1,3 @@
-function escapeHtml(str) {
-  var map = {
-    "&": "&amp;",
-    "<": "&lt;",
-    ">": "&gt;",
-    '"': "&quot;",
-    "'": "&#39;"
-  };
-  return str.replace(/[&<>"']/g, function(char) {
-    return map[char];
-  });
-}
-
 function initialsFromName(name) {
   return name
     .split(" ")
@@ -39,7 +26,7 @@ function renderSubmitForm() {
       '<input type="text" id="submit-era" required placeholder="e.g. Vietnam, Gulf War">' +
       '<label for="submit-bio">Short story</label>' +
       '<textarea id="submit-bio" required rows="4" placeholder="Tell us about them"></textarea>' +
-      '<button type="submit" class="confirm-button">Submit Veteran</button>' +
+      '<button type="submit" class="confirm-button">Add Vet</button>' +
     '</form>' +
     '<div id="submit-success" class="submit-success" hidden></div>';
 
@@ -76,7 +63,7 @@ function setUpSubmitForm() {
     const success = document.getElementById("submit-success");
     success.hidden = false;
     success.innerHTML =
-      '<p>Thanks &mdash; ' + escapeHtml(name) + ' is now listed!</p>' +
+      '<p>Done &mdash; ' + escapeHtml(name) + '\'s on the list.</p>' +
       '<a class="confirm-button" href="#/vets/' + newVet.id + '">View their profile</a>';
   });
 }
