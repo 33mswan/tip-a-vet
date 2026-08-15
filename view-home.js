@@ -6,25 +6,23 @@ function renderHome() {
     '<section class="hero">' +
       '<h2>Every veteran deserves to be seen.</h2>' +
       '<p class="hero-copy">' +
-        'Tip a Vet is a nonprofit that connects everyday donors directly with veterans ' +
-        'who need support &mdash; from veterans facing homelessness or gaps in benefits, ' +
-        'to any veteran a community wants to say thank you to. Every tip goes straight ' +
-        'to a real person\'s story, not overhead.' +
+        'Send a vet a few bucks. Straight from you to them &mdash; ' +
+        'no middleman, just a small processing fee.' +
       '</p>' +
       '<a href="#/tip" class="confirm-button hero-cta">Tip a Vet a Buck</a>' +
     '</section>' +
     '<section class="how-it-works">' +
       '<div class="how-step">' +
-        '<h3>1. Browse a vet</h3>' +
-        '<p>Read a short story about a veteran we\'re supporting.</p>' +
+        '<h3><span class="star-bullet">&#9733;</span>Find a vet</h3>' +
+        '<p>Browse a few names and pick someone.</p>' +
       '</div>' +
       '<div class="how-step">' +
-        '<h3>2. Send a tip</h3>' +
+        '<h3><span class="star-bullet">&#9733;</span>Send a tip</h3>' +
         '<p>Choose an amount, as little as a dollar.</p>' +
       '</div>' +
       '<div class="how-step">' +
-        '<h3>3. It goes straight to them</h3>' +
-        '<p>No middlemen, no overhead skimmed off your gift.</p>' +
+        '<h3><span class="star-bullet">&#9733;</span>It goes straight to them</h3>' +
+        '<p>Minus a small processing fee.</p>' +
       '</div>' +
     '</section>' +
     '<section class="featured-vets">' +
