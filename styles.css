@@ -387,7 +387,7 @@ body {
   border-radius: 1rem;
   /* Folded U.S. flag photo, U.S. Army Reserve (SFC Brent Powell), public
      domain: https://www.dvidshub.net/image/6537858/folded-flag */
-  background-image: linear-gradient(rgba(246, 241, 230, 0.86), rgba(246, 241, 230, 0.86)),
+  background-image: linear-gradient(rgba(246, 241, 230, 0.3), rgba(246, 241, 230, 0.3)),
     url("flag-texture.jpg");
   background-size: cover;
   background-position: center 40%;
