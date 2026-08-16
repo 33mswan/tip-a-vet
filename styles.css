@@ -211,12 +211,21 @@ body {
 
 .amount-input {
   width: 6rem;
+  max-width: 100%;
   border: none;
   background: none;
   font-size: 3.5rem;
   font-weight: 800;
   color: var(--color-navy);
   text-align: left;
+  appearance: textfield;
+  -moz-appearance: textfield;
+}
+
+.amount-input::-webkit-outer-spin-button,
+.amount-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 .amount-input:focus {
@@ -308,6 +317,7 @@ body {
 
 .payment-link {
   display: inline-block;
+  width: auto;
 }
 
 .checkout-form {
@@ -315,6 +325,10 @@ body {
   flex-direction: column;
   gap: 0.75rem;
   margin-top: 1rem;
+}
+
+.checkout-form[hidden] {
+  display: none;
 }
 
 .checkout-form label {

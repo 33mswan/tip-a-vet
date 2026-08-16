@@ -1,5 +1,8 @@
 const TIP_FEE = 0.3;
-let paymentVeteranId = null;
+
+function roundToCents(amount) {
+  return Math.round(amount * 100) / 100;
+}
 
 function pickRandomVeteran() {
   return VETERANS[Math.floor(Math.random() * VETERANS.length)];
@@ -7,7 +10,6 @@ function pickRandomVeteran() {
 
 function renderPayment(vet) {
   const targetVet = vet || pickRandomVeteran();
-  paymentVeteranId = targetVet.id;
 
   const content = document.getElementById("payment-content");
   content.innerHTML =
@@ -36,7 +38,7 @@ function renderPayment(vet) {
       '</div>' +
       '<div class="note-field">' +
         '<label for="tip-note">Add a note (optional)</label>' +
-        '<input type="text" id="tip-note" placeholder="For his service 🇺🇸" maxlength="60">' +
+        '<input type="text" id="tip-note" placeholder="For your service 🇺🇸" maxlength="60">' +
       '</div>' +
     '</div>' +
     '<button type="button" id="send-button" class="confirm-button">Send</button>';
@@ -48,9 +50,9 @@ function updateFeeBreakdown(amount) {
   const valid = amount && amount > 0;
   const total = valid ? amount + TIP_FEE : 0;
 
-  document.getElementById("fee-amount").textContent = valid ? formatCurrency(amount) : "$0.00";
+  document.getElementById("fee-amount").textContent = valid ? formatCurrency(amount) : formatCurrency(0);
   document.getElementById("fee-fee").textContent = "+" + formatCurrency(TIP_FEE);
-  document.getElementById("fee-total").textContent = valid ? formatCurrency(total) : "$0.00";
+  document.getElementById("fee-total").textContent = valid ? formatCurrency(total) : formatCurrency(0);
 
   const sendButton = document.getElementById("send-button");
   sendButton.textContent = valid ? "Send " + formatCurrency(total) : "Send";
@@ -69,8 +71,8 @@ function setUpPaymentFlow(vet) {
     });
   }
 
-  selectChipFor(Number(amountInput.value));
-  updateFeeBreakdown(Number(amountInput.value));
+  selectChipFor(roundToCents(Number(amountInput.value)));
+  updateFeeBreakdown(roundToCents(Number(amountInput.value)));
 
   chips.forEach(function (chip) {
     chip.addEventListener("click", function () {
@@ -82,18 +84,18 @@ function setUpPaymentFlow(vet) {
   });
 
   amountInput.addEventListener("input", function () {
-    const amount = Number(amountInput.value);
+    const amount = roundToCents(Number(amountInput.value));
     selectChipFor(amount);
     updateFeeBreakdown(amount);
   });
 
   sendButton.addEventListener("click", function () {
-    const amount = Number(amountInput.value);
+    const amount = roundToCents(Number(amountInput.value));
     if (!amount || amount <= 0) {
       return;
     }
 
-    sendTip(paymentVeteranId, amount);
+    sendTip(vet.id, amount);
     const note = noteInput.value.trim();
 
     const content = document.getElementById("payment-content");
