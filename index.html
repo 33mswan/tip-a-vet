@@ -9,12 +9,12 @@
 <body>
 <header class="site-header">
   <div class="header-bar">
-    <a href="#/" class="brand"><h1>Tip a Vet</h1></a>
+    <a href="#/" class="brand"><h1><span class="brand-star">&#9733;</span>Tip a Vet</h1></a>
     <button type="button" id="nav-toggle" class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">&#9776;</button>
     <nav id="site-nav" class="site-nav">
       <a href="#/vets">Browse Vets</a>
-      <a href="#/submit">Submit a Vet</a>
-      <a href="#/served">Past Vets Served</a>
+      <a href="#/submit">Add a Vet</a>
+      <a href="#/served">Vets We've Tipped</a>
       <a href="#/tip" class="nav-tip-button">Tip a Vet a Buck</a>
     </nav>
   </div>
@@ -28,7 +28,7 @@
   <section id="directory-view" class="view" hidden>
     <div class="page-heading">
       <h2>Browse Veterans</h2>
-      <p>Every one of these veterans has a story. Pick one to learn more and send a tip.</p>
+      <p>Pick someone to send a few bucks to.</p>
     </div>
     <div id="veteran-grid" class="veteran-grid"></div>
   </section>
@@ -45,16 +45,16 @@
 
   <section id="submit-view" class="view" hidden>
     <div class="page-heading">
-      <h2>Submit a Veteran</h2>
-      <p>Know a veteran who could use support? Tell us about them.</p>
+      <h2>Add a Vet</h2>
+      <p>Know a vet who deserves a few bucks? Add them to the list.</p>
     </div>
     <div id="submit-content" class="profile-content"></div>
   </section>
 
   <section id="served-view" class="view" hidden>
     <div class="page-heading">
-      <h2>Veterans We've Served</h2>
-      <p>Thanks to donors like you, these veterans have already been fully supported.</p>
+      <h2>Vets We've Tipped</h2>
+      <p>These vets have already gotten what they needed from people like you.</p>
     </div>
     <div id="served-grid" class="veteran-grid"></div>
   </section>

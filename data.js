@@ -57,8 +57,21 @@ const VETERANS = [
 
 const TIPS = [];
 
+function escapeHtml(str) {
+  var map = {
+    "&": "&amp;",
+    "<": "&lt;",
+    ">": "&gt;",
+    '"': "&quot;",
+    "'": "&#39;"
+  };
+  return str.replace(/[&<>"']/g, function (char) {
+    return map[char];
+  });
+}
+
 function formatCurrency(amount) {
-  return "$" + amount.toFixed(0);
+  return "$" + amount.toFixed(2);
 }
 
 function findVeteran(id) {
@@ -84,7 +97,7 @@ const SERVED_VETERANS = [
     branch: "Navy",
     era: "Vietnam",
     outcomeBlurb: "Fully funded new hearing aids after his VA benefits lapsed.",
-    totalRaised: 340,
+    totalReceived: 340,
   },
   {
     id: "s2",
@@ -92,7 +105,7 @@ const SERVED_VETERANS = [
     branch: "Army",
     era: "Gulf War",
     outcomeBlurb: "Covered three months of rent during a gap between jobs.",
-    totalRaised: 890,
+    totalReceived: 890,
   },
   {
     id: "s3",
@@ -100,7 +113,7 @@ const SERVED_VETERANS = [
     branch: "Marines",
     era: "Korea",
     outcomeBlurb: "Funded a wheelchair ramp for his front porch.",
-    totalRaised: 615,
+    totalReceived: 615,
   },
   {
     id: "s4",
@@ -108,6 +121,6 @@ const SERVED_VETERANS = [
     branch: "Air Force",
     era: "WWII",
     outcomeBlurb: "Paid for a headstone marker honoring her service.",
-    totalRaised: 275,
+    totalReceived: 275,
   },
 ];
