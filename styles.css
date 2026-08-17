@@ -426,6 +426,13 @@ body {
   text-align: center;
 }
 
+.how-step {
+  background-color: var(--color-bg-card);
+  border-radius: 1rem;
+  box-shadow: 0 2px 10px rgba(40, 57, 79, 0.1);
+  padding: 1.5rem;
+}
+
 .how-step h3 {
   color: var(--color-navy);
   margin-bottom: 0.5rem;
