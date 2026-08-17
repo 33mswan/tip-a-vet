@@ -20,13 +20,13 @@
 body {
   font-family: -apple-system, "Segoe UI", system-ui, Roboto, sans-serif;
   color: var(--color-text);
-  /* Waving U.S. flag photo by Tim Mossholder, Unsplash License (free to
-     use, no attribution required): https://unsplash.com/photos/QsX23A3NgMQ */
+  /* Waving U.S. flags photo by Jon Sailer, Unsplash License (free to use,
+     no attribution required): https://unsplash.com/photos/7yBS-naIoLc */
   background-color: var(--color-bg);
   background-image: linear-gradient(rgba(246, 241, 230, 0.8), rgba(246, 241, 230, 0.8)),
     url("flag-texture.jpg");
   background-size: cover;
-  background-position: center top;
+  background-position: center 15%;
   background-attachment: fixed;
   background-repeat: no-repeat;
 }
