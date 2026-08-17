@@ -20,9 +20,9 @@
 body {
   font-family: -apple-system, "Segoe UI", system-ui, Roboto, sans-serif;
   color: var(--color-text);
-  /* Waving U.S. flag photo by Tim Mossholder, converted to black and
-     white. Unsplash License (free to use, no attribution required):
-     https://unsplash.com/photos/QsX23A3NgMQ */
+  /* Waving U.S. flag photo by Tim Mossholder, recolored as a navy/cream
+     duotone to match the site palette. Unsplash License (free to use,
+     no attribution required): https://unsplash.com/photos/QsX23A3NgMQ */
   background-color: var(--color-bg);
   background-image: linear-gradient(rgba(246, 241, 230, 0.8), rgba(246, 241, 230, 0.8)),
     url("flag-texture.jpg");
