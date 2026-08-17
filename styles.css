@@ -20,9 +20,9 @@
 body {
   font-family: -apple-system, "Segoe UI", system-ui, Roboto, sans-serif;
   color: var(--color-text);
-  /* Waving U.S. flag photo by Tim Mossholder, recolored as a navy/cream
-     duotone to match the site palette. Unsplash License (free to use,
-     no attribution required): https://unsplash.com/photos/QsX23A3NgMQ */
+  /* Waving U.S. flag photo by Tim Mossholder, natural color. Unsplash
+     License (free to use, no attribution required):
+     https://unsplash.com/photos/QsX23A3NgMQ */
   background-color: var(--color-bg);
   background-image: linear-gradient(rgba(246, 241, 230, 0.4), rgba(246, 241, 230, 0.4)),
     url("flag-texture.jpg");
@@ -392,8 +392,10 @@ body {
 .hero {
   position: relative;
   text-align: center;
-  padding: 2rem 1rem 3rem;
+  padding: 2rem 1.5rem 2.5rem;
   border-radius: 1rem;
+  background-color: var(--color-bg-card);
+  box-shadow: 0 2px 10px rgba(40, 57, 79, 0.1);
 }
 
 .hero h2 {
