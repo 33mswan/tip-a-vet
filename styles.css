@@ -19,8 +19,16 @@
 
 body {
   font-family: -apple-system, "Segoe UI", system-ui, Roboto, sans-serif;
-  background-color: var(--color-bg);
   color: var(--color-text);
+  /* Waving U.S. flag photo by Tim Mossholder, Unsplash License (free to
+     use, no attribution required): https://unsplash.com/photos/QsX23A3NgMQ */
+  background-color: var(--color-bg);
+  background-image: linear-gradient(rgba(246, 241, 230, 0.8), rgba(246, 241, 230, 0.8)),
+    url("flag-texture.jpg");
+  background-size: cover;
+  background-position: center top;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
 }
 
 .site-header {
@@ -385,12 +393,6 @@ body {
   text-align: center;
   padding: 2rem 1rem 3rem;
   border-radius: 1rem;
-  /* Waving U.S. flag photo by Tim Mossholder, Unsplash License (free to
-     use, no attribution required): https://unsplash.com/photos/QsX23A3NgMQ */
-  background-image: linear-gradient(rgba(246, 241, 230, 0.8), rgba(246, 241, 230, 0.8)),
-    url("flag-texture.jpg");
-  background-size: cover;
-  background-position: center 40%;
 }
 
 .hero h2 {
