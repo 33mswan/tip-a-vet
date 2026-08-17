@@ -24,7 +24,7 @@ body {
      duotone to match the site palette. Unsplash License (free to use,
      no attribution required): https://unsplash.com/photos/QsX23A3NgMQ */
   background-color: var(--color-bg);
-  background-image: linear-gradient(rgba(246, 241, 230, 0.6), rgba(246, 241, 230, 0.6)),
+  background-image: linear-gradient(rgba(246, 241, 230, 0.4), rgba(246, 241, 230, 0.4)),
     url("flag-texture.jpg");
   background-size: cover;
   background-position: center 40%;
